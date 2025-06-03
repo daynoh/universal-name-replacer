@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Name Replacer (with ruto default)",
+  "version": "1.0",
+  "description": "On any website, always replace “ruto” with one of four nicknames, plus let you add arbitrary other find→replace pairs.",
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup.html"
+    
+  },
+
+  "permissions": [
+    "storage"
+  ]
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Universal Name Replacer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      min-width: 320px;
+      padding: 10px;
+    }
+    h1 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    label {
+      font-size: 14px;
+    }
+    select {
+      margin-left: 8px;
+      padding: 2px 4px;
+      font-size: 14px;
+    }
+    #status {
+      margin-top: 6px;
+      font-size: 12px;
+      color: green;
+      display: none;
+    }
+    hr {
+      margin: 12px 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 4px 6px;
+      text-align: left;
+      font-size: 14px;
+    }
+    th {
+      background: #f0f0f0;
+    }
+    .row-button {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 2px 6px;
+      cursor: pointer;
+      font-size: 12px;
+      border-radius: 3px;
+    }
+    .row-button:hover {
+      background: #c0392b;
+    }
+    #add-section {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 8px;
+    }
+    #add-section input {
+      margin-bottom: 4px;
+      padding: 4px;
+      font-size: 14px;
+    }
+    #add-btn {
+      align-self: flex-start;
+      padding: 6px 10px;
+      cursor: pointer;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+    #add-btn:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Universal Name Replacer</h1>
+
+  <!-- ──────────── 1) “ruto” SECTION ──────────────────────────────────────────── -->
+  <div id="ruto-section">
+    <label for="ruto-select">Replacement for “ruto”:</label>
+    <select id="ruto-select">
+      <option value="nabii">nabii</option>
+      <option value="kaunda uongoman">kaunda uongoman</option>
+      <option value="kaongo">kaongo</option>
+      <option value="kasongo">kasongo</option>
+    </select>
+  </div>
+
+  <div id="status">Saved!</div>
+  <hr />
+
+  <!-- ──────────── 2) TABLE OF OTHER REPLACEMENTS ─────────────────────────────── -->
+  <table id="replacements-table">
+    <thead>
+      <tr>
+        <th>Find</th>
+        <th>Replace With</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- JS will inject rows here -->
+    </tbody>
+  </table>
+
+  <!-- ──────────── 3) ADD NEW PAIR ──────────────────────────────────────────────── -->
+  <div id="add-section">
+    <input
+      type="text"
+      id="find-input"
+      placeholder="Name to replace (e.g. biden)"
+    />
+    <input
+      type="text"
+      id="replace-input"
+      placeholder="Replacement (e.g. JoeBro)"
+    />
+    <button id="add-btn">Add Replacement</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
